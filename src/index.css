@@ -10,6 +10,7 @@ html {
 
 body {
   min-height: 100vh;
+  background: #f7f3df;
 }
 
 #root {
@@ -34,4 +35,31 @@ body {
 /* 锚点滚动偏移（避开固定导航） */
 .section-anchor {
   scroll-margin-top: 72px;
+}
+
+/* ===== 各区域背景色 ===== */
+
+/* ① Hero — 海洋蓝 */
+#hero {
+  background: linear-gradient(180deg, #a8c4f0 0%, #889df0 40%, #c5d8f8 100%);
+}
+
+/* ② 关于 — 羊皮纸暖色 */
+#about {
+  background: linear-gradient(180deg, #e8dcc8 0%, #f7f3df 50%, #ede4d0 100%);
+}
+
+/* ③ 项目 — 草地绿 */
+#projects {
+  background: linear-gradient(180deg, #7ab87a 0%, #8ac68a 40%, #a8d8a8 100%);
+}
+
+/* ④ 博客 — 博物馆金色 */
+#blog {
+  background: linear-gradient(180deg, #e8c84a 0%, #f7cd67 40%, #fae08a 100%);
+}
+
+/* ⑤ 联系 — 信箱粉 */
+#contact {
+  background: linear-gradient(180deg, #e88a9a 0%, #f8a6b2 40%, #fcc8d0 100%);
 }
