@@ -124,20 +124,6 @@ a:hover{color:var(--primary-hover)}
 .project-tags{display:flex;flex-wrap:wrap;gap:6px}
 .project-tag{font-size:.6875rem;font-weight:700;padding:3px 10px;border-radius:var(--radius-round);background:var(--bg);color:var(--text-secondary);border:1px solid var(--border-light)}
 
-/* ===== PR Timeline ===== */
-.pr-timeline{display:flex;flex-direction:column;gap:14px}
-.pr-item{display:flex;gap:14px;padding:18px 22px;border-radius:var(--radius);background:#fcfaf5;border:2px solid var(--border-light);transition:all .25s var(--ease);cursor:pointer;text-decoration:none;color:var(--text)}
-.pr-item:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:var(--shadow)}
-.pr-status{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.75rem;font-weight:800}
-.pr-status.merged{background:#d4f0e8;color:#19c8b9}
-.pr-status.open{background:#f8d0d8;color:#e05a5a}
-.pr-body{flex:1;min-width:0}
-.pr-title{font-weight:800;font-size:.9375rem;margin-bottom:2px;line-height:1.3}
-.pr-title small{font-weight:600;font-size:.75rem;color:var(--text-secondary)}
-.pr-meta{font-size:.75rem;color:var(--text-secondary);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.pr-repo{display:inline-flex;align-items:center;gap:4px;font-weight:600;color:var(--primary)}
-.pr-desc{font-size:.8125rem;color:var(--text-secondary);line-height:1.5;margin-top:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-
 /* ===== About — Villager Cards ===== */
 .about-scene{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
 .villager-card{border-radius:var(--radius-lg);padding:28px 24px;background:#fcfaf5;box-shadow:0 3px 12px rgba(61,52,40,.08);position:relative}
@@ -164,17 +150,18 @@ a:hover{color:var(--primary-hover)}
 
 /* ===== PR Showcase ===== */
 .pr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.pr-item{border-radius:var(--radius-lg);padding:22px 24px;background:#fcfaf5;border:2px solid transparent;box-shadow:0 2px 8px rgba(61,52,40,.06);transition:all .3s var(--ease);cursor:pointer;text-decoration:none;color:var(--text);display:block}
+.pr-item{display:flex;gap:14px;border-radius:var(--radius-lg);padding:22px 24px;background:#fcfaf5;border:2px solid transparent;box-shadow:0 2px 8px rgba(61,52,40,.06);transition:all .3s var(--ease);cursor:pointer;text-decoration:none;color:var(--text)}
 .pr-item:hover{transform:translateY(-4px);border-color:var(--primary);box-shadow:var(--shadow-lg)}
-.pr-repo{font-size:.75rem;font-weight:600;color:var(--text-secondary);margin-bottom:4px;display:flex;align-items:center;gap:6px}
-.pr-repo svg{width:14px;height:14px;opacity:.6}
-.pr-title{font-size:.9375rem;font-weight:800;margin-bottom:6px;line-height:1.3}
-.pr-desc{font-size:.8rem;color:var(--text-secondary);line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.pr-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.pr-state{font-size:.6875rem;font-weight:700;padding:3px 10px;border-radius:var(--radius-round)}
-.pr-merged{background:#d4f0e8;color:#19ad8e}
-.pr-open{background:#e6f9f6;color:#19c8b9}
-.pr-date{font-size:.6875rem;color:var(--text-disabled)}
+.pr-status{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.75rem;font-weight:800}
+.pr-status.merged{background:#d4f0e8;color:#19c8b9}
+.pr-status.open{background:#f8d0d8;color:#e05a5a}
+.pr-body{flex:1;min-width:0}
+.pr-title{font-weight:800;font-size:.9375rem;margin-bottom:4px;line-height:1.3}
+.pr-title small{font-weight:600;font-size:.75rem;color:var(--text-secondary)}
+.pr-repo{font-size:.75rem;font-weight:600;color:var(--text-secondary);margin-bottom:2px;display:inline-flex;align-items:center;gap:6px}
+.pr-repo svg{width:12px;height:12px;opacity:.6}
+.pr-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.75rem;color:var(--text-secondary)}
+.pr-desc{font-size:.8rem;color:var(--text-secondary);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
 /* ===== Footer ===== */
 .footer{padding:40px 20px 20px;text-align:center;border-top:2px solid var(--border-light);margin-top:20px}
@@ -300,25 +287,6 @@ a:hover{color:var(--primary-hover)}
   <div class="project-grid" id="projectsGrid"></div>
 </section>
 </div>
-</div>
-
-<!-- ===== PRs ===== -->
-<div class="phone-frame">
-<section class="section reveal" id="prs">
-  <div class="section-label">
-    <svg width="20" height="20" viewBox="0 0 80 67" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.6">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M23.6992 9.64355C12.1012 9.64355 2.69922 19.0456 2.69922 30.6436V38.4145C2.69922 50.0125 12.1012 59.4145 23.6992 59.4145H34.8603L40.1597 66.2754C40.56 66.7937 41.3422 66.7937 41.7425 66.2754L47.042 59.4145H58.203C69.801 59.4145 79.203 50.0124 79.203 38.4145V30.6436C79.203 19.0456 69.801 9.64355 58.203 9.64355H23.6992Z" fill="#F5F1E6"/>
-      <circle cx="20.8502" cy="35.8365" r="5.78961" fill="#5E483B"/><circle cx="40.4293" cy="35.8365" r="5.78961" fill="#5E483B"/><circle cx="60.0084" cy="35.8365" r="5.78961" fill="#5E483B"/>
-    </svg>
-    最近 Pull Request
-  </div>
-  <h2 class="section-headline">开源贡献 🐙</h2>
-  <p class="section-sub">最近提交的 PR，代码改变世界 ✨</p>
-  <div class="pr-timeline" id="prsGrid"></div>
-  <div style="margin-top:18px;text-align:center">
-    <a href="https://github.com/pulls?q=is%3Apr+author%3Azarttic+sort%3Acreated-desc" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:.8125rem">查看全部 PR →</a>
-  </div>
-</section>
 </div>
 
 <!-- ===== PRs ===== -->
@@ -555,28 +523,29 @@ document.getElementById('projectsGrid').innerHTML = projects.map(p =>
 ).join('');
 
 // ===== PR Data =====
+// ===== PRs Data =====
 const prs = [
-  { repo:'esengine/DeepSeek-Reasonix', number:965, title:'fix(desktop): add sticky-to-bottom auto-scroll for chat area', desc:'使用 ResizeObserver 实现聊天区域自动滚动,支持用户停留/恢复、任务完成自动滚到底部,含中英文 i18n。', state:'merged', date:'2026-05-15', url:'https://github.com/esengine/DeepSeek-Reasonix/pull/965' },
-  { repo:'datanote1018/datanote', number:1, title:'feat: 新增 NL2SQL Agent 编排与修复回路', desc:'实现 NL2SQL Agent:S chem a 上下文、SQL 安全守卫、Hive dry-run、失败修复回路(最多 2 轮),Tests: 81/0/0。', state:'open', date:'2026-04-21', url:'https://github.com/datanote1018/datanote/pull/1' },
-  { repo:'zarttic/cube_core', number:9, title:'feat: add partition product adapters', desc:'新增分区产品适配器,支持多维数据分区场景下的产品数据映射与转换。', state:'merged', date:'2026-04-28', url:'https://github.com/zarttic/cube_core/pull/9' },
-  { repo:'aaif-goose/goose', number:8364, title:'fix: apply declarative provider context_limit via canonical create path', desc:'修复自定义 provider 的 context_limit 应用路径,通过模型标准化路径统一处理,含完整单元测试。', state:'merged', date:'2026-04-07', url:'https://github.com/aaif-goose/goose/pull/8364' },
-  { repo:'zarttic/cube_core', number:7, title:'feat: add ray-to-ingest e2e runthrough', desc:'新增 Ray 输出摄取模块(SQLite sink)、摄取单元测试与 e2e 运行脚本、场景无关摄取 DDL 文档。', state:'merged', date:'2026-04-21', url:'https://github.com/zarttic/cube_core/pull/7' }
+  { repo:'esengine/DeepSeek-Reasonix', repoUrl:'https://github.com/esengine/DeepSeek-Reasonix', title:'fix(desktop): sticky-to-bottom auto-scroll', desc:'为桌面端聊天区域添加粘性底部自动滚动，支持 ResizeObserver 检测流式内容增长 + 用户滚动位置感知 + 跳转到底部按钮。', merged:true, url:'https://github.com/esengine/DeepSeek-Reasonix/pull/965' },
+  { repo:'zarttic/cube_core', repoUrl:'https://github.com/zarttic/cube_core', title:'feat: add partition product adapters', desc:'新增分区产品适配器层，支持多租户数据隔离的产品数据接入。', merged:true, url:'https://github.com/zarttic/cube_core/pull/9' },
+  { repo:'datanote1018/datanote', repoUrl:'https://github.com/datanote1018/datanote', title:'feat: NL2SQL Agent 编排与修复回路', desc:'实现 NL2SQL Agent 编排：Schema 上下文、SQL 安全守卫、Hive dry-run、失败自动修复回路（最多 2 轮）。', merged:false, url:'https://github.com/datanote1018/datanote/pull/1' },
+  { repo:'aaif-goose/goose', repoUrl:'https://github.com/aaif-goose/goose', title:'fix: declarative provider context_limit', desc:'将自定义 provider 的 known_models context_limit 应用逻辑重构到标准化的模型创建路径中。', merged:true, url:'https://github.com/aaif-goose/goose/pull/8364' },
+  { repo:'zarttic/cube_core', repoUrl:'https://github.com/zarttic/cube_core', title:'feat: add ray-to-ingest e2e runthrough', desc:'添加 Ray 输出数据摄取模块（SQLite 存储）+ E2E 运行脚本，101 项测试通过。', merged:true, url:'https://github.com/zarttic/cube_core/pull/7' },
 ];
-
-const stateLabel = {merged:'✅ Merged',open:'🔄 Open'};
-const dateLabel = d => `${d.slice(0,4)}·${d.slice(5)}`;
 
 document.getElementById('prsGrid').innerHTML = prs.map(p =>
   `<a href="${p.url}" target="_blank" rel="noopener" class="pr-item">
-    <div class="pr-repo">
-      <svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-      ${p.repo}#${p.number}
-    </div>
-    <div class="pr-title">${p.title}</div>
-    <div class="pr-desc">${p.desc}</div>
-    <div class="pr-meta">
-      <span class="pr-state ${p.state==='merged'?'pr-merged':'pr-open'}">${stateLabel[p.state]}</span>
-      <span class="pr-date">${dateLabel(p.date)}</span>
+    <div class="pr-status ${p.merged?'merged':'open'}">${p.merged?'✓':'○'}</div>
+    <div class="pr-body">
+      <div class="pr-title">${p.title} <small>#${p.url.split('/').pop()}</small></div>
+      <div class="pr-meta">
+        <span class="pr-repo">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M8 1C4.133 1 1 4.13 1 8c0 3.09 2.006 5.71 4.79 6.635.35.065.478-.152.478-.337 0-.166-.006-.606-.01-1.19-1.947.423-2.357-.94-2.357-.94-.319-.81-.778-1.025-.778-1.025-.636-.434.048-.425.048-.425.703.05 1.073.722 1.073.722.625 1.07 1.64.761 2.04.582.063-.452.244-.76.445-.935-1.556-.176-3.19-.778-3.19-3.462 0-.765.273-1.39.72-1.88-.072-.177-.312-.89.067-1.855 0 0 .588-.188 1.926.718A6.72 6.72 0 018 4.073c.597.003 1.198.08 1.76.236 1.337-.906 1.925-.718 1.925-.718.38.965.14 1.678.07 1.855.447.49.72 1.115.72 1.88 0 2.69-1.637 3.284-3.196 3.458.251.216.475.642.475 1.294 0 .934-.008 1.687-.008 1.917 0 .187.127.404.482.336A6.996 6.996 0 0015 8c0-3.87-3.134-7-7-7z"/></svg>
+          ${p.repo}
+        </span>
+        <span>·</span>
+        <span>${p.merged?'已合并':'开放中'}</span>
+      </div>
+      <div class="pr-desc">${p.desc}</div>
     </div>
   </a>`
 ).join('');
