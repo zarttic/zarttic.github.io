@@ -1,40 +1,432 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="light">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="generator" content="VuePress 2.0.0-rc.8" />
-    <meta name="theme" content="VuePress Theme Hope 2.0.0-rc.31" />
-    <style>
-      html {
-        background: var(--bg-color, #fff);
-      }
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>zarttic</title>
+  <meta name="description" content="zarttic 的个人主页：AI 工具、数据工程、开源贡献。" />
+  <style>
+    :root {
+      --bg: #f6f0d8;
+      --ink: #202020;
+      --muted: #6b6658;
+      --panel: #fffaf0;
+      --line: #202020;
+      --green: #84c26a;
+      --blue: #7aa2d6;
+      --red: #df6b57;
+      --yellow: #e7bb46;
+      --shadow: 6px 6px 0 #202020;
+    }
 
-      html[data-theme="dark"] {
-        background: var(--bg-color, #1d1e1f);
-      }
+    * {
+      box-sizing: border-box;
+    }
 
+    html {
+      min-height: 100%;
+      background:
+        linear-gradient(90deg, rgba(32, 32, 32, .05) 1px, transparent 1px),
+        linear-gradient(rgba(32, 32, 32, .05) 1px, transparent 1px),
+        var(--bg);
+      background-size: 16px 16px;
+      color: var(--ink);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .screen {
+      width: min(1120px, 100%);
+      border: 4px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 4px solid var(--line);
+      padding: 10px 14px;
+      background: var(--yellow);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .lights {
+      display: flex;
+      gap: 7px;
+    }
+
+    .light {
+      width: 14px;
+      height: 14px;
+      border: 3px solid var(--line);
+      background: var(--red);
+    }
+
+    .light:nth-child(2) {
+      background: var(--yellow);
+    }
+
+    .light:nth-child(3) {
+      background: var(--green);
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1.1fr 1.4fr;
+      min-height: 620px;
+    }
+
+    .left {
+      border-right: 4px solid var(--line);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+      background:
+        linear-gradient(135deg, rgba(132, 194, 106, .22), transparent 45%),
+        var(--panel);
+    }
+
+    .right {
+      padding: 24px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 18px;
+    }
+
+    .avatar {
+      width: 112px;
+      height: 112px;
+      image-rendering: pixelated;
+      border: 4px solid var(--line);
+      box-shadow: 4px 4px 0 var(--line);
+      background:
+        linear-gradient(var(--blue) 0 0) 32px 20px / 48px 16px no-repeat,
+        linear-gradient(var(--ink) 0 0) 28px 36px / 20px 20px no-repeat,
+        linear-gradient(var(--ink) 0 0) 64px 36px / 20px 20px no-repeat,
+        linear-gradient(var(--red) 0 0) 44px 68px / 28px 12px no-repeat,
+        linear-gradient(var(--green) 0 0) 20px 88px / 72px 16px no-repeat,
+        #f8d8a8;
+    }
+
+    h1 {
+      margin: 22px 0 12px;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: .9;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      max-width: 440px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .badge {
+      border: 3px solid var(--line);
+      background: #fff;
+      padding: 5px 8px;
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 3px 3px 0 var(--line);
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .button {
+      border: 4px solid var(--line);
+      background: #fff;
+      padding: 12px;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 4px 4px 0 var(--line);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+
+    .button:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--line);
+    }
+
+    .button.primary {
+      background: var(--green);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .section-title span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      min-height: 132px;
+      border: 4px solid var(--line);
+      background: #fff;
+      padding: 13px;
+      box-shadow: 4px 4px 0 var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card:hover .name,
+    .pr:hover .name {
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+    }
+
+    .name {
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .desc {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tag {
+      border: 2px solid var(--line);
+      background: #f6f0d8;
+      padding: 2px 5px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .pr-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .pr {
+      border: 4px solid var(--line);
+      background: #fff;
+      padding: 12px;
+      box-shadow: 4px 4px 0 var(--line);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .status {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border: 3px solid var(--line);
+      background: var(--green);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .status.open {
+      background: var(--yellow);
+    }
+
+    .repo {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer {
+      border-top: 4px solid var(--line);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 860px) {
       body {
-        background: var(--bg-color);
+        display: block;
+        padding: 14px;
       }
-    </style>
-    <script>
-      const userMode = localStorage.getItem("vuepress-theme-hope-scheme");
-      const systemDarkMode =
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-      if (userMode === "dark" || (userMode !== "light" && systemDarkMode)) {
-        document.documentElement.setAttribute("data-theme", "dark");
+      .content {
+        grid-template-columns: 1fr;
       }
-    </script>
-    <meta property="og:url" content="https://zarttic.github.io/"><meta property="og:site_name" content="文档库"><meta property="og:title" content="主页"><meta property="og:type" content="website"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2024-03-14T13:26:19.000Z"><meta property="article:author" content="zarttic"><meta property="article:modified_time" content="2024-03-14T13:26:19.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"主页"}</script><title>主页 | 文档库</title><meta name="description" content="个人文档库">
-    <link rel="preload" href="/assets/style-Hcw8UUqh.css" as="style"><link rel="stylesheet" href="/assets/style-Hcw8UUqh.css">
-    <link rel="modulepreload" href="/assets/app-CzDAvQnl.js"><link rel="modulepreload" href="/assets/index.html-D8V7C_Ap.js"><link rel="modulepreload" href="/assets/plugin-vue_export-helper-DlAUqK2U.js">
-    <link rel="prefetch" href="/assets/index.html-CbUYDiPR.js" as="script"><link rel="prefetch" href="/assets/index.html-KwlMwO6W.js" as="script"><link rel="prefetch" href="/assets/index.html-BrMbxB_H.js" as="script"><link rel="prefetch" href="/assets/disable.html-DlrbubJl.js" as="script"><link rel="prefetch" href="/assets/encrypt.html-CNvud2AG.js" as="script"><link rel="prefetch" href="/assets/layout.html-CPnLcrQk.js" as="script"><link rel="prefetch" href="/assets/markdown.html-qCWBByYu.js" as="script"><link rel="prefetch" href="/assets/page.html-C0LeWrXw.js" as="script"><link rel="prefetch" href="/assets/index.html-DyOwuDtr.js" as="script"><link rel="prefetch" href="/assets/index.html-C1GMRFmH.js" as="script"><link rel="prefetch" href="/assets/index.html-B_MDweXS.js" as="script"><link rel="prefetch" href="/assets/creational.html-DrsojVk8.js" as="script"><link rel="prefetch" href="/assets/01.html-DYSe8nFh.js" as="script"><link rel="prefetch" href="/assets/02.html-CA9Xvrt5.js" as="script"><link rel="prefetch" href="/assets/03.html-DeA53dU5.js" as="script"><link rel="prefetch" href="/assets/04.html-4e6c5vO-.js" as="script"><link rel="prefetch" href="/assets/05.html-C4Q3LI9O.js" as="script"><link rel="prefetch" href="/assets/06.html-Tdchtqy9.js" as="script"><link rel="prefetch" href="/assets/07.html-BT8xZlYq.js" as="script"><link rel="prefetch" href="/assets/index.html-nwPFgq1A.js" as="script"><link rel="prefetch" href="/assets/01.html-Cr8Z6UfL.js" as="script"><link rel="prefetch" href="/assets/02.html-B88zklIn.js" as="script"><link rel="prefetch" href="/assets/03.html-COHxqzUF.js" as="script"><link rel="prefetch" href="/assets/04.html-CijTNjh3.js" as="script"><link rel="prefetch" href="/assets/05.html-DQCIRq7v.js" as="script"><link rel="prefetch" href="/assets/index.html-CLAqZI32.js" as="script"><link rel="prefetch" href="/assets/index.html-BxnwMqrx.js" as="script"><link rel="prefetch" href="/assets/context.html-CqbghplH.js" as="script"><link rel="prefetch" href="/assets/io.html-CKxly_Dq.js" as="script"><link rel="prefetch" href="/assets/runtime.html-BaFSr0ti.js" as="script"><link rel="prefetch" href="/assets/index.html-CyfBq7nO.js" as="script"><link rel="prefetch" href="/assets/database.html-BFUZ4jDP.js" as="script"><link rel="prefetch" href="/assets/linux.html-BQlRU42l.js" as="script"><link rel="prefetch" href="/assets/index.html-BOpn7M9G.js" as="script"><link rel="prefetch" href="/assets/mess.html-BcBqigfG.js" as="script"><link rel="prefetch" href="/assets/404.html-C6sYByEF.js" as="script"><link rel="prefetch" href="/assets/giscus-C26m1eXs.js" as="script"><link rel="prefetch" href="/assets/auto-BwZvv_Gp.js" as="script"><link rel="prefetch" href="/assets/index-uOBkQLRT.js" as="script"><link rel="prefetch" href="/assets/flowchart-966sEcGG.js" as="script"><link rel="prefetch" href="/assets/mermaid.core-dbZqCUHF.js" as="script"><link rel="prefetch" href="/assets/reveal.esm-CYbl4_PU.js" as="script"><link rel="prefetch" href="/assets/markdown.esm-BG2Xu2Hd.js" as="script"><link rel="prefetch" href="/assets/highlight.esm-B2Y_eiOr.js" as="script"><link rel="prefetch" href="/assets/math.esm-DN7Rh_EM.js" as="script"><link rel="prefetch" href="/assets/search.esm-DuBqnxcF.js" as="script"><link rel="prefetch" href="/assets/notes.esm-DcquA2oP.js" as="script"><link rel="prefetch" href="/assets/zoom.esm-Ctj_eavO.js" as="script"><link rel="prefetch" href="/assets/photoswipe.esm-GXRgw7eJ.js" as="script"><link rel="prefetch" href="/assets/SearchResult-BEeXfZ1r.js" as="script">
-  </head>
-  <body>
-    <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="vp-skip-link sr-only">跳至主要內容</a><!--]--><!--[--><div class="theme-container no-sidebar"><!--[--><header id="navbar" class="vp-navbar"><div class="vp-navbar-start"><button type="button" class="vp-toggle-sidebar-button" title="Toggle Sidebar"><span class="icon"></span></button><!--[--><!----><!--]--><!--[--><a class="route-link vp-brand" href="/"><img class="vp-nav-logo" src="https://theme-hope-assets.vuejs.press/logo.svg" alt><!----><span class="vp-site-name hide-in-pad">文档库</span></a><!--]--><!--[--><!----><!--]--></div><div class="vp-navbar-center"><!--[--><!----><!--]--><!--[--><nav class="vp-nav-links"><div class="nav-item hide-in-mobile"><a class="route-link nav-link active" href="/" aria-label="主页"><span class="font-icon icon fa-fw fa-sm fas fa-home" style=""></span>主页<!----></a></div><div class="nav-item hide-in-mobile"><div class="dropdown-wrapper"><button type="button" class="dropdown-title" aria-label="Golang"><span class="title"><span class="font-icon icon fa-fw fa-sm fa-brands fa-golang" style=""></span>Golang</span><span class="arrow"></span><ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>标准库</span></h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a class="route-link nav-link" href="/golang/std/io.html" aria-label="I/O标准库"><span class="font-icon icon fa-fw fa-sm fa-brands fa-golang" style=""></span>I/O标准库<!----></a></li><li class="dropdown-subitem"><a class="route-link nav-link" href="/golang/std/runtime.html" aria-label="Runtime标准库"><span class="font-icon icon fa-fw fa-sm fa-brands fa-golang" style=""></span>Runtime标准库<!----></a></li><li class="dropdown-subitem"><a class="route-link nav-link" href="/golang/std/context.html" aria-label="Context标准库"><span class="font-icon icon fa-fw fa-sm fa-brands fa-golang" style=""></span>Context标准库<!----></a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>设计模式</span></h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a class="route-link nav-link" href="/golang/design/creational.html" aria-label="创建型模式"><span class="font-icon icon fa-fw fa-sm fa-brands fa-golang" style=""></span>创建型模式<!----></a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>Web框架</span></h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a class="route-link nav-link" href="/golang/gin/" aria-label="Gin"><span class="font-icon icon fa-fw fa-sm fa-brands fa-golang" style=""></span>Gin<!----></a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>orm库</span></h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a class="route-link nav-link" href="/golang/gorm/" aria-label="Gorm"><span class="font-icon icon fa-fw fa-sm fa-brands fa-golang" style=""></span>Gorm<!----></a></li></ul></li></ul></button></div></div><div class="nav-item hide-in-mobile"><div class="dropdown-wrapper"><button type="button" class="dropdown-title" aria-label="Java"><span class="title"><span class="font-icon icon fa-fw fa-sm fab fa-java" style=""></span>Java</span><span class="arrow"></span><ul class="nav-dropdown"></ul></button></div></div><div class="nav-item hide-in-mobile"><div class="dropdown-wrapper"><button type="button" class="dropdown-title" aria-label="杂记"><span class="title"><span class="font-icon icon fa-fw fa-sm fas fa-book" style=""></span>杂记</span><span class="arrow"></span><ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>已整理</span></h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a class="route-link nav-link" href="/notes/order/linux.html" aria-label="linux"><span class="font-icon icon fa-fw fa-sm fab fa-linux" style=""></span>linux<!----></a></li><li class="dropdown-subitem"><a class="route-link nav-link" href="/notes/order/database.html" aria-label="数据库"><span class="font-icon icon fa-fw fa-sm fa-solid fa-database" style=""></span>数据库<!----></a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>未整理</span></h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a class="route-link nav-link" href="/notes/unorder/mess.html" aria-label="未整理的文档"><span class="font-icon icon fa-fw fa-sm fa-solid fa-bookmark" style=""></span>未整理的文档<!----></a></li></ul></li></ul></button></div></div><div class="nav-item hide-in-mobile"><a class="route-link nav-link" href="/resource/" aria-label="资源导航"><span class="font-icon icon fa-fw fa-sm fa-solid fa-window-restore" style=""></span>资源导航<!----></a></div><div class="nav-item hide-in-mobile"><a class="route-link nav-link" href="/home/" aria-label="写作指南"><span class="font-icon icon fa-fw fa-sm fas fa-laptop-code" style=""></span>写作指南<!----></a></div></nav><!--]--><!--[--><!----><!--]--></div><div class="vp-navbar-end"><!--[--><!----><!--]--><!--[--><!----><div class="nav-item vp-repo"><a class="vp-repo-link" href="https://github.com/zarttic/zarttic.github.io" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" class="icon github-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="github icon" style="width:1.25rem;height:1.25rem;vertical-align:middle;"><path d="M511.957 21.333C241.024 21.333 21.333 240.981 21.333 512c0 216.832 140.544 400.725 335.574 465.664 24.49 4.395 32.256-10.07 32.256-23.083 0-11.69.256-44.245 0-85.205-136.448 29.61-164.736-64.64-164.736-64.64-22.315-56.704-54.4-71.765-54.4-71.765-44.587-30.464 3.285-29.824 3.285-29.824 49.195 3.413 75.179 50.517 75.179 50.517 43.776 75.008 114.816 53.333 142.762 40.79 4.523-31.66 17.152-53.377 31.19-65.537-108.971-12.458-223.488-54.485-223.488-242.602 0-53.547 19.114-97.323 50.517-131.67-5.035-12.33-21.93-62.293 4.779-129.834 0 0 41.258-13.184 134.912 50.346a469.803 469.803 0 0 1 122.88-16.554c41.642.213 83.626 5.632 122.88 16.554 93.653-63.488 134.784-50.346 134.784-50.346 26.752 67.541 9.898 117.504 4.864 129.834 31.402 34.347 50.474 78.123 50.474 131.67 0 188.586-114.73 230.016-224.042 242.09 17.578 15.232 33.578 44.672 33.578 90.454v135.85c0 13.142 7.936 27.606 32.854 22.87C862.25 912.597 1002.667 728.747 1002.667 512c0-271.019-219.648-490.667-490.71-490.667z"></path></svg></a></div><div class="nav-item hide-in-mobile"><button type="button" id="appearance-switch"><svg xmlns="http://www.w3.org/2000/svg" class="icon auto-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="auto icon" style="display:block;"><path d="M512 992C246.92 992 32 777.08 32 512S246.92 32 512 32s480 214.92 480 480-214.92 480-480 480zm0-840c-198.78 0-360 161.22-360 360 0 198.84 161.22 360 360 360s360-161.16 360-360c0-198.78-161.22-360-360-360zm0 660V212c165.72 0 300 134.34 300 300 0 165.72-134.28 300-300 300z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="dark icon" style="display:none;"><path d="M524.8 938.667h-4.267a439.893 439.893 0 0 1-313.173-134.4 446.293 446.293 0 0 1-11.093-597.334A432.213 432.213 0 0 1 366.933 90.027a42.667 42.667 0 0 1 45.227 9.386 42.667 42.667 0 0 1 10.24 42.667 358.4 358.4 0 0 0 82.773 375.893 361.387 361.387 0 0 0 376.747 82.774 42.667 42.667 0 0 1 54.187 55.04 433.493 433.493 0 0 1-99.84 154.88 438.613 438.613 0 0 1-311.467 128z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="light icon" style="display:none;"><path d="M952 552h-80a40 40 0 0 1 0-80h80a40 40 0 0 1 0 80zM801.88 280.08a41 41 0 0 1-57.96-57.96l57.96-58a41.04 41.04 0 0 1 58 58l-58 57.96zM512 752a240 240 0 1 1 0-480 240 240 0 0 1 0 480zm0-560a40 40 0 0 1-40-40V72a40 40 0 0 1 80 0v80a40 40 0 0 1-40 40zm-289.88 88.08-58-57.96a41.04 41.04 0 0 1 58-58l57.96 58a41 41 0 0 1-57.96 57.96zM192 512a40 40 0 0 1-40 40H72a40 40 0 0 1 0-80h80a40 40 0 0 1 40 40zm30.12 231.92a41 41 0 0 1 57.96 57.96l-57.96 58a41.04 41.04 0 0 1-58-58l58-57.96zM512 832a40 40 0 0 1 40 40v80a40 40 0 0 1-80 0v-80a40 40 0 0 1 40-40zm289.88-88.08 58 57.96a41.04 41.04 0 0 1-58 58l-57.96-58a41 41 0 0 1 57.96-57.96z"></path></svg></button></div><!--[--><button type="button" class="search-pro-button" aria-label="搜索"><svg xmlns="http://www.w3.org/2000/svg" class="icon search-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="search icon"><path d="M192 480a256 256 0 1 1 512 0 256 256 0 0 1-512 0m631.776 362.496-143.2-143.168A318.464 318.464 0 0 0 768 480c0-176.736-143.264-320-320-320S128 303.264 128 480s143.264 320 320 320a318.016 318.016 0 0 0 184.16-58.592l146.336 146.368c12.512 12.48 32.768 12.48 45.28 0 12.48-12.512 12.48-32.768 0-45.28"></path></svg><div class="search-pro-placeholder">搜索</div><div class="search-pro-key-hints"><kbd class="search-pro-key">Ctrl</kbd><kbd class="search-pro-key">K</kbd></div></button><!--]--><!--]--><!--[--><!----><!--]--><button type="button" class="vp-toggle-navbar-button" aria-label="Toggle Navbar" aria-expanded="false" aria-controls="nav-screen"><span><span class="vp-top"></span><span class="vp-middle"></span><span class="vp-bottom"></span></span></button></div></header><!----><!--]--><!----><div class="toggle-sidebar-wrapper"><span class="arrow start"></span></div><aside id="sidebar" class="vp-sidebar"><!--[--><!----><!--]--><ul class="vp-sidebar-links"></ul><!--[--><!----><!--]--></aside><!--[--><main id="main-content" class="vp-project-home" aria-labelledby="main-title"><!----><header class="vp-hero-info-wrapper"><!--[--><div class="vp-hero-mask light" style="background-image:url(https://theme-hope-assets.vuejs.press/bg/6-light.svg);background-attachment:fixed;"></div><div class="vp-hero-mask dark" style="background-image:url(https://theme-hope-assets.vuejs.press/bg/6-dark.svg);background-attachment:fixed;"></div><!--]--><div class="vp-hero-info"><!--[--><img class="vp-hero-image" style="" src="https://github.githubassets.com/assets/yolo-default-be0bbff04951.png" alt="Live free or die"><!--]--><div class="vp-hero-infos"><h1 id="main-title">Live free or die</h1><p id="main-description">个人自用文档库</p><p class="vp-hero-actions"><a class="route-link nav-link vp-hero-action primary" href="/./home/" aria-label="使用指南"><!--[--><span class="font-icon icon fa-fw fa-sm fas fa-lightbulb" style=""></span><!--]-->使用指南<!----></a><a class="route-link nav-link vp-hero-action default" href="/./notes/" aria-label="杂记"><!---->杂记<!----></a></p></div></div></header><!--[--><div class="vp-feature-wrapper"><div class="vp-feature-bg light" style="background-image:url(https://theme-hope-assets.vuejs.press/bg/2-light.svg);background-repeat:repeat;background-size:initial;"></div><div class="vp-feature-bg dark" style="background-image:url(https://theme-hope-assets.vuejs.press/bg/2-dark.svg);background-repeat:repeat;background-size:initial;"></div><div class="vp-feature" style=""><!--[--><img class="vp-feature-image" src="/assets/image/book.svg" alt><!----><!--]--><!--[--><h2 class="vp-feature-header">文档直达</h2><p class="vp-feature-description">点击即可直接进入文档</p><!--]--><div class="vp-features"><a class="route-link vp-feature-item link" href="/golang/" aria-label="Golang"><h3 class="vp-feature-title"><span class="font-icon icon fa-fw fa-sm fa-brands fa-golang" style=""></span><span>Golang</span></h3><p class="vp-feature-details">Golang 标准库</p></a><a class="route-link vp-feature-item link" href="/java/" aria-label="Java"><h3 class="vp-feature-title"><span class="font-icon icon fa-fw fa-sm fa-brands fa-java" style=""></span><span>Java</span></h3><p class="vp-feature-details">Java 面试题</p></a></div></div></div><!--]--><!----><div class="theme-hope-content"></div><!----></main><!--]--><footer class="vp-footer-wrapper"><!----><div class="vp-copyright">Copyright © 2024 zarttic </div></footer></div><!--]--><!--]--><!--[--><!----><!----><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-CzDAvQnl.js" defer></script>
-  </body>
+
+      .left {
+        border-right: 0;
+        border-bottom: 4px solid var(--line);
+      }
+
+      .projects,
+      .links {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="screen">
+    <div class="topbar">
+      <div class="lights" aria-hidden="true">
+        <span class="light"></span>
+        <span class="light"></span>
+        <span class="light"></span>
+      </div>
+      <div>zarttic.exe</div>
+      <div>online</div>
+    </div>
+
+    <div class="content">
+      <section class="left" aria-labelledby="intro-title">
+        <div>
+          <div class="avatar" aria-label="pixel avatar"></div>
+          <h1 id="intro-title">zarttic</h1>
+          <p class="subtitle">
+            AI 工具、数据工程和后端基础设施方向的开发者。最近在做 Agent、NL2SQL、
+            个人知识库和开发工具链，也会给开源项目提交实际使用中遇到的修复。
+          </p>
+          <div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">Go</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">Java</span>
+            <span class="badge">Agent</span>
+            <span class="badge">Data</span>
+          </div>
+        </div>
+
+        <nav class="links" aria-label="profile links">
+          <a class="button primary" href="https://github.com/zarttic" target="_blank" rel="noopener">GitHub</a>
+          <a class="button" href="https://github.com/zarttic?tab=repositories" target="_blank" rel="noopener">Repos</a>
+          <a class="button" href="https://github.com/zarttic/bd_wiki" target="_blank" rel="noopener">Wiki</a>
+          <a class="button" href="https://github.com/pulls?q=is%3Apr+author%3Azarttic+archived%3Afalse" target="_blank" rel="noopener">PRs</a>
+        </nav>
+      </section>
+
+      <section class="right" aria-label="work">
+        <div>
+          <h2 class="section-title">Selected Projects <span>real repos</span></h2>
+          <div class="projects">
+            <a class="card" href="https://github.com/zarttic/cube_core" target="_blank" rel="noopener">
+              <div class="name">cube_core</div>
+              <div class="desc">Python 数据处理与分区质量工作流，包含产品适配器、Ray 到 ingest 的端到端流程。</div>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Data</span><span class="tag">Ray</span></div>
+            </a>
+            <a class="card" href="https://github.com/zarttic/ai-wiki" target="_blank" rel="noopener">
+              <div class="name">ai-wiki</div>
+              <div class="desc">面向 Claude Code 对话的 AI 知识收集系统，把开发上下文沉淀成个人知识库。</div>
+              <div class="tags"><span class="tag">Python</span><span class="tag">AI</span><span class="tag">Knowledge</span></div>
+            </a>
+            <a class="card" href="https://github.com/zarttic/minicode-go" target="_blank" rel="noopener">
+              <div class="name">minicode-go</div>
+              <div class="desc">Go 编写的 AI coding assistant，带动画 TUI、多 provider 和 goal-driven agent loop。</div>
+              <div class="tags"><span class="tag">Go</span><span class="tag">TUI</span><span class="tag">Agent</span></div>
+            </a>
+            <a class="card" href="https://github.com/zarttic/markdown-tech-pdf-skill" target="_blank" rel="noopener">
+              <div class="name">markdown-tech-pdf-skill</div>
+              <div class="desc">Codex skill，用于把 Markdown 技术文档导出为 PDF，服务文档生成场景。</div>
+              <div class="tags"><span class="tag">Codex</span><span class="tag">PDF</span><span class="tag">Markdown</span></div>
+            </a>
+            <a class="card" href="https://github.com/zarttic/ai-job" target="_blank" rel="noopener">
+              <div class="name">ai-job</div>
+              <div class="desc">智能求职助手，基于 AI 做简历处理和 Boss 直聘自动投递。</div>
+              <div class="tags"><span class="tag">Java</span><span class="tag">AI</span><span class="tag">Automation</span></div>
+            </a>
+            <a class="card" href="https://github.com/zarttic/bd_wiki" target="_blank" rel="noopener">
+              <div class="name">bd_wiki</div>
+              <div class="desc">大数据学习与面试知识库，整理 SQL 优化、Spark 调优、数仓建模和数据质量。</div>
+              <div class="tags"><span class="tag">SQL</span><span class="tag">Spark</span><span class="tag">Wiki</span></div>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="section-title">Open Source PRs <span>outside repos</span></h2>
+          <div class="pr-list">
+            <a class="pr" href="https://github.com/esengine/DeepSeek-Reasonix/pull/965" target="_blank" rel="noopener">
+              <span class="status">M</span>
+              <span><span class="name">Sticky auto-scroll for desktop chat</span><span class="repo">esengine/DeepSeek-Reasonix #965</span></span>
+            </a>
+            <a class="pr" href="https://github.com/aaif-goose/goose/pull/8364" target="_blank" rel="noopener">
+              <span class="status">M</span>
+              <span><span class="name">Apply provider context_limit via canonical create path</span><span class="repo">aaif-goose/goose #8364</span></span>
+            </a>
+            <a class="pr" href="https://github.com/datanote1018/datanote/pull/1" target="_blank" rel="noopener">
+              <span class="status open">O</span>
+              <span><span class="name">NL2SQL Agent orchestration and repair loop</span><span class="repo">datanote1018/datanote #1</span></span>
+            </a>
+            <a class="pr" href="https://github.com/OI-wiki/OI-wiki/pull/4483" target="_blank" rel="noopener">
+              <span class="status">M</span>
+              <span><span class="name">Add cpeditor to tools/editor docs</span><span class="repo">OI-wiki/OI-wiki #4483</span></span>
+            </a>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <span>built as a single static page</span>
+          <span>last updated: 2026-05-26</span>
+        </footer>
+      </section>
+    </div>
+  </main>
+</body>
 </html>
