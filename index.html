@@ -113,7 +113,7 @@ a:hover{color:var(--primary-hover)}
 
 /* ===== Projects ===== */
 .project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
-.project-item{border-radius:var(--radius-lg);padding:24px;background:#fcfaf5;border:2px solid transparent;box-shadow:0 2px 8px rgba(61,52,40,.06);transition:all .3s var(--ease);cursor:pointer;position:relative;overflow:hidden}
+.project-item{display:block;border-radius:var(--radius-lg);padding:24px;background:#fcfaf5;border:2px solid transparent;box-shadow:0 2px 8px rgba(61,52,40,.06);transition:all .3s var(--ease);cursor:pointer;position:relative;overflow:hidden;text-decoration:none;color:var(--text)}
 .project-item::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--border-light);border-radius:4px 4px 0 0;transition:background .3s var(--ease)}
 .project-item:hover{transform:translateY(-5px);border-color:var(--primary);box-shadow:var(--shadow-lg)}
 .project-item:hover::before{background:var(--primary)}
@@ -231,8 +231,8 @@ a:hover{color:var(--primary-hover)}
   </div>
   <div class="dialog-box">
     <div class="speaker">✧ zarttic 的小岛</div>
-    <p>欢迎来到我的岛屿！🏝️<br />这里是一名全栈开发者的小小世界</p>
-    <div class="sub">坐标 · 前端 | React | TypeScript</div>
+    <p>欢迎来到我的岛屿！🏝️<br />这里记录我的 AI 工具、数据工程和开源贡献</p>
+    <div class="sub">GitHub · zarttic | Python | Go | TypeScript</div>
   </div>
 </div>
 
@@ -259,10 +259,10 @@ a:hover{color:var(--primary-hover)}
     工具背包
   </div>
   <h2 class="section-headline">我掌握的能力</h2>
-  <p class="section-sub">每个技能就像 NookPhone 里的一个 App，随时待命 ✨</p>
+  <p class="section-sub">从仓库和开源贡献里沉淀出来的常用技术栈 ✨</p>
   <div class="nook-grid" id="skillsGrid"></div>
   <div style="margin-top:18px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
-    <span class="hero-tag" style="background:var(--primary-bg);border-color:var(--primary);color:var(--primary);font-size:.75rem">🌱 正在学习: Rust · Three.js</span>
+    <span class="hero-tag" style="background:var(--primary-bg);border-color:var(--primary);color:var(--primary);font-size:.75rem">🌱 近期方向: Agent · NL2SQL · 数据工程</span>
   </div>
 </section>
 </div>
@@ -283,7 +283,7 @@ a:hover{color:var(--primary-hover)}
     岛屿开发日志
   </div>
   <h2 class="section-headline">做过的一些项目</h2>
-  <p class="section-sub">每一个项目都是一次冒险，就像探索新岛屿 🌴</p>
+  <p class="section-sub">从 GitHub 仓库里挑出的几个更有代表性的项目 🌴</p>
   <div class="project-grid" id="projectsGrid"></div>
 </section>
 </div>
@@ -300,8 +300,8 @@ a:hover{color:var(--primary-hover)}
     </svg>
     开源贡献
   </div>
-  <h2 class="section-headline">最近的 Pull Request</h2>
-  <p class="section-sub">我在 GitHub 上的一些开源贡献 🛠️</p>
+  <h2 class="section-headline">开源 Pull Request</h2>
+  <p class="section-sub">筛选自我提交到外部开源仓库的 PR 🛠️</p>
   <div class="pr-grid" id="prsGrid"></div>
 </section>
 </div>
@@ -336,7 +336,7 @@ a:hover{color:var(--primary-hover)}
           <div class="title">全栈开发者</div>
         </div>
       </div>
-      <p>"写代码第 N 年，从 Hello World 到现在的完整项目，编程早已不只是工作——它是我的表达方式。我喜欢用技术创造让人觉得温暖、有趣的产品。"</p>
+      <p>"我主要在 AI 工具、知识库、数据工程和后端基础设施方向做项目，也会把实际使用中遇到的问题整理成可复用的代码。"</p>
     </div>
     <div class="villager-card vc-yellow">
       <div class="villager-header">
@@ -351,10 +351,10 @@ a:hover{color:var(--primary-hover)}
         </div>
         <div class="villager-info">
           <div class="name">Design Fox 🦊</div>
-          <div class="title">UI / 交互设计</div>
+          <div class="title">AI 工具与前端体验</div>
         </div>
       </div>
-      <p>"好的设计应该让人会心一笑——就像动森里的小动物对话一样自然。我相信少即是多，关注细节，让每个像素都有意义。"</p>
+      <p>"我关注工具产品的使用体验：聊天自动滚动、知识列表虚拟化、关系视图这类细节，最终都应该让工作流更顺手。"</p>
     </div>
     <div class="villager-card vc-green">
       <div class="villager-header">
@@ -371,7 +371,7 @@ a:hover{color:var(--primary-hover)}
           <div class="title">终身学习者</div>
         </div>
       </div>
-      <p>"我的信条：每天进步一点点 ✨<br/>简洁胜于复杂 · 技术为人服务 · 保持乐趣"</p>
+      <p>"我的项目横跨 Python、Go、Java、Vue 和 TypeScript。比起堆技术名词，我更在意能不能把一个真实问题闭环。"</p>
     </div>
     <div class="villager-card vc-pink">
       <div class="villager-header">
@@ -383,10 +383,10 @@ a:hover{color:var(--primary-hover)}
         </div>
         <div class="villager-info">
           <div class="name">K.K. Slider 🐶</div>
-          <div class="title">岛歌创作者</div>
+          <div class="title">开源参与者</div>
         </div>
       </div>
-      <p>"生活不只有代码和 Bug，还有音乐、咖啡和日落 🌅 — 在写代码的间隙，记得抬头看看窗外的天空。"</p>
+      <p>"我给 DeepSeek-Reasonix、goose、OI-wiki、acmer-info 等项目提交过 PR，也会在自己的仓库里持续整理工具链。"</p>
     </div>
   </div>
 </section>
@@ -404,9 +404,9 @@ a:hover{color:var(--primary-hover)}
     岛屿信箱
   </div>
   <h2 class="section-headline">给我写信 📬</h2>
-  <p class="section-sub">欢迎来交流、合作，或者 just 打个招呼 🐾</p>
+  <p class="section-sub">欢迎通过 GitHub 交流项目、开源贡献或技术想法 🐾</p>
   <div class="mailbox-grid">
-    <a href="mailto:hello@zarttic.dev" class="mail-item">
+    <a href="https://github.com/zarttic?tab=repositories" target="_blank" rel="noopener" class="mail-item">
       <span class="mail-icon">
         <svg viewBox="0 0 80 67" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M23.6992 9.64355C12.1012 9.64355 2.69922 19.0456 2.69922 30.6436V38.4145C2.69922 50.0125 12.1012 59.4145 23.6992 59.4145H34.8603L40.1597 66.2754C40.56 66.7937 41.3422 66.7937 41.7425 66.2754L47.042 59.4145H58.203C69.801 59.4145 79.203 50.0124 79.203 38.4145V30.6436C79.203 19.0456 69.801 9.64355 58.203 9.64355H23.6992Z" fill="#F5F1E6"/>
@@ -414,8 +414,8 @@ a:hover{color:var(--primary-hover)}
         </svg>
       </span>
       <div class="mail-text">
-        <div class="label">邮箱</div>
-        <div class="value">hello@zarttic.dev</div>
+        <div class="label">仓库</div>
+        <div class="value">Repositories</div>
       </div>
     </a>
     <a href="https://github.com/zarttic" target="_blank" rel="noopener" class="mail-item">
@@ -430,7 +430,7 @@ a:hover{color:var(--primary-hover)}
         <div class="value">@zarttic</div>
       </div>
     </a>
-    <a href="#" class="mail-item">
+    <a href="https://github.com/zarttic/bd_wiki" target="_blank" rel="noopener" class="mail-item">
       <span class="mail-icon">
         <svg viewBox="0 0 91 82" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="1.18652" y="1.29688" width="57.27" height="74.7502" rx="8" fill="#F7F3E1"/>
@@ -439,11 +439,11 @@ a:hover{color:var(--primary-hover)}
         </svg>
       </span>
       <div class="mail-text">
-        <div class="label">博客</div>
-        <div class="value">技术笔记</div>
+        <div class="label">知识库</div>
+        <div class="value">bd_wiki</div>
       </div>
     </a>
-    <a href="#" class="mail-item">
+    <a href="https://github.com/pulls?q=is%3Apr+author%3Azarttic+archived%3Afalse" target="_blank" rel="noopener" class="mail-item">
       <span class="mail-icon">
         <svg viewBox="0 0 85 66" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M30.585 0H54.7227C56.8954 0.0509226 61.251 1.72121 61.2917 7.99496C61.2917 10.9719 62.9303 12.1182 64.1666 12.4312H70.5935C78.4581 12.4312 84.8336 18.8067 84.8336 26.6712V51.0976C84.8336 58.9622 78.4581 65.3377 70.5935 65.3377H14.2401C6.37551 65.3377 0 58.9622 0 51.0976V26.6712C0 18.8067 6.37549 12.4312 14.2401 12.4312H21.3539C22.5467 12.1169 24.1915 11.0856 24.1915 8.63043C24.1915 4.37225 26.5803 0 30.585 0Z" fill="#4C3C33"/>
@@ -451,8 +451,8 @@ a:hover{color:var(--primary-hover)}
         </svg>
       </span>
       <div class="mail-text">
-        <div class="label">Twitter</div>
-        <div class="value">@zarttic</div>
+        <div class="label">PR</div>
+        <div class="value">Open Source</div>
       </div>
     </a>
   </div>
@@ -505,34 +505,122 @@ document.getElementById('heroTags').innerHTML = tags.map(t =>
 
 // ===== Projects =====
 const projects = [
-  { icon:`<svg viewBox="0 0 75 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M73.4776 42.6469C74.3136 43.1559 74.8239 44.0639 74.8239 45.0427L74.8238 91.3169C74.8238 93.4535 72.5304 94.8056 70.6609 93.7711L57.1138 86.2752C57.0003 86.2124 56.8922 86.1424 56.79 86.0659C56.6721 86.15 56.5468 86.2257 56.4148 86.2917L38.2551 95.3748C37.2348 95.8851 36.1174 95.7104 35.3137 95.1075L17.4432 85.8943L4.19306 93.4406C2.32316 94.5055 0 93.1551 0 91.0032L0 44.0708C0 43.0455 0.559409 42.1019 1.45893 41.6099L15.2233 34.0814C15.7573 33.5984 16.4698 33.3238 17.2092 33.3496C17.9055 33.3344 18.5765 33.5852 19.0941 34.0247L36.8163 43.2084C36.9627 43.2843 37.1006 43.3721 37.229 43.4702L55.2861 34.1782C55.8761 33.5561 56.7392 33.2153 57.6166 33.3053C58.4756 33.294 59.2896 33.6875 59.8246 34.3346L73.4776 42.6469Z" fill="#F7F3E1"/><path d="M6.52377 82.0731V48.0332L14.8739 42.4786C17.2846 40.5949 18.8918 41.3573 20.3426 42.2992C24.7996 44.5635 34.0799 49.3192 35.5458 50.2277C37.0117 51.1363 38.7848 50.6063 39.4881 50.2277C43.6624 47.9953 52.6388 43.2341 55.1504 42.0491C56.9845 41.0167 58.6538 41.4091 59.4364 42.0491L68.3122 47.8817C68.3025 58.2423 68.2888 79.5382 68.3122 81.8371C68.3355 84.136 66.3569 83.6355 65.3647 83.0979C63.993 82.2183 60.8645 80.1598 59.3237 78.9635C57.8528 77.6733 55.9286 78.4259 55.1504 78.9635C50.6606 81.3572 41.2617 86.3554 39.5842 87.1988C37.9067 88.0422 36.1662 87.5502 35.5056 87.1988L19.857 78.9518C17.6359 77.4557 16.3856 78.4383 15.5177 78.9518C14.6499 79.4653 12.4948 80.8085 10.8174 82.0731C7.10015 84.4843 6.40613 83.0778 6.52377 82.0731Z" fill="#59C9C0"/></svg>`, name:'Animal Island UI', desc:'基于 React + TypeScript 的动森风格 UI 组件库，17+ 组件，按需加载。', tags:['React','TypeScript','Less','组件库'] },
-  { icon:`<svg viewBox="0 0 80 67" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M23.6992 9.64355C12.1012 9.64355 2.69922 19.0456 2.69922 30.6436V38.4145C2.69922 50.0125 12.1012 59.4145 23.6992 59.4145H34.8603L40.1597 66.2754C40.56 66.7937 41.3422 66.7937 41.7425 66.2754L47.042 59.4145H58.203C69.801 59.4145 79.203 50.0124 79.203 38.4145V30.6436C79.203 19.0456 69.801 9.64355 58.203 9.64355H23.6992Z" fill="#F5F1E6"/><circle cx="20.8502" cy="35.8365" r="5.78961" fill="#5E483B"/><circle cx="40.4293" cy="35.8365" r="5.78961" fill="#5E483B"/><circle cx="60.0084" cy="35.8365" r="5.78961" fill="#5E483B"/></svg>`, name:'个人技术博客', desc:'Next.js 驱动的博客，支持 Markdown、搜索、暗色模式。', tags:['Next.js','MDX','Vercel'] },
-  { icon:`<svg viewBox="0 0 71 102" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.35156 37.6318C7.73431 36.0515 10.642 31.3027 11.2109 24.95C11.7798 18.5972 13.7394 14.4805 14.6481 13.2163C15.8525 11.5407 19.9545 6.49634 25.173 5.80196C27.9297 5.43522 34.7153 5.33636 36.9296 10.7419C37.4507 11.7566 38.6388 13.1771 39.2217 10.7419C39.8045 8.30677 41.1465 3.75719 41.7446 1.7868C41.8872 0.650267 42.699 -1.10802 44.8049 0.951045C45.9827 2.21621 46.5858 2.85586 46.7401 3.01754C47.3749 3.68254 47.7481 4.75898 46.0837 5.80196L41.7446 10.3282C41.6745 10.4642 41.6028 10.5951 41.5335 10.7215C40.8661 11.939 40.4245 12.7446 43.8929 13.8254C49.2551 15.4963 49.6473 18.9449 49.4979 25.5929C49.4922 27.7517 48.5101 32.943 44.6272 36.4376C43.9371 37.0587 43.2631 37.6013 42.6144 38.0741C43.2465 37.1271 43.5855 35.8959 43.5855 34.3764C43.5855 30.2947 40.6459 26.818 36.641 26.818C32.6361 26.818 29.7905 29.4779 29.7905 33.5597C29.7905 37.6415 33.1299 40.4599 37.1348 40.4599C37.6446 40.4599 38.1291 40.4275 38.5865 40.3624C37.4973 40.8019 36.6539 40.9844 36.167 41.0122C32.6149 41.2019 24.0809 41.3374 18.3609 40.3618C12.6409 39.5812 7.97135 38.2166 6.35156 37.6318Z" fill="#409B5E"/><path fill-rule="evenodd" clip-rule="evenodd" d="M60.0691 40.8215H67.1206C68.7774 40.8215 70.1206 39.4784 70.1206 37.8215V35.5485C70.1206 33.8917 68.7774 32.5485 67.1206 32.5485H56.7823C56.6085 32.5371 56.4354 32.5373 56.264 32.5485H56.0204C54.9415 32.5485 53.9955 33.1182 53.4669 33.9731C53.1679 34.3324 52.9274 34.7512 52.7651 35.2198L49.1837 45.5611H0V58.4033C0 66.1352 6.26801 72.4033 14 72.4033H36.8272C37.9123 72.4033 38.972 72.2953 39.9964 72.0894L38.9452 75.1249L4.09012 75.1246C2.43326 75.1245 1.09009 76.4677 1.09009 78.1246V80.0307C1.09009 81.6876 2.43324 83.0307 4.09009 83.0307H5.73181C4.69681 84.4841 4.09037 86.2483 4.09037 88.1504C4.09037 93.121 8.23174 97.1504 13.3404 97.1504C18.449 97.1504 22.5904 93.121 22.5904 88.1504C22.5904 86.2483 21.9839 84.4841 20.9489 83.0307H27.7318C26.6968 84.4841 26.0904 86.2483 26.0904 88.1504C26.0904 93.121 30.2317 97.1504 35.3404 97.1504C40.449 97.1504 44.5904 93.121 44.5904 88.1504C44.5904 86.2857 44.0075 84.5535 43.0095 83.1168C44.4915 82.9562 45.8202 81.9654 46.3415 80.46L60.0691 40.8215Z" fill="#4A3D37"/></svg>`, name:'小游戏合集', desc:'Canvas 休闲小游戏集合，贪吃蛇、2048 等经典玩法。', tags:['Canvas','JavaScript','Game'] },
-  { icon:`<svg viewBox="0 0 91 82" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.18652" y="1.29688" width="57.27" height="74.7502" rx="8" fill="#F7F3E1"/><path fill-rule="evenodd" clip-rule="evenodd" d="M42.6888 35.5469C30.6862 30.2339 19.8407 34.0493 15.9183 36.6212C13.8852 52.7036 18.98 56.7398 27.1072 60.3539C27.6614 60.5307 28.9816 61.3837 29.8281 63.3814C29.7361 61.4936 31.0417 60.5765 31.7061 60.3539C42.6889 56.3496 46.6113 48.1457 42.6888 35.5469Z" fill="#4C3C33"/></svg>`, name:'AI Chat App', desc:'集成 LLM 的聊天应用，流式输出、对话历史、多模型切换。', tags:['WebSocket','AI','React'] },
-  { icon:`<svg viewBox="0 0 85 66" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M30.585 0H54.7227C56.8954 0.0509226 61.251 1.72121 61.2917 7.99496C61.2917 10.9719 62.9303 12.1182 64.1666 12.4312H70.5935C78.4581 12.4312 84.8336 18.8067 84.8336 26.6712V51.0976C84.8336 58.9622 78.4581 65.3377 70.5935 65.3377H14.2401C6.37551 65.3377 0 58.9622 0 51.0976V26.6712C0 18.8067 6.37549 12.4312 14.2401 12.4312H21.3539C22.5467 12.1169 24.1915 11.0856 24.1915 8.63043C24.1915 4.37225 26.5803 0 30.585 0Z" fill="#4C3C33"/><ellipse cx="42.9035" cy="39.4683" rx="19.7658" ry="19.7652" fill="#F9F6E5"/><path fill-rule="evenodd" clip-rule="evenodd" d="M57.5033 39.468C57.5033 47.5323 50.9659 54.0697 42.9016 54.0697C34.8372 54.0697 28.2998 47.5323 28.2998 39.468C28.2998 31.4036 34.8372 24.8662 42.9016 24.8662C50.9659 24.8662 57.5033 31.4036 57.5033 39.468Z" fill="#9364DE"/></svg>`, name:'数据仪表盘', desc:'可视化分析面板，拖拽布局、实时更新、多图表联动。', tags:['D3.js','ECharts','Dashboard'] },
-  { icon:`<svg viewBox="0 0 71 102" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.35156 37.6318C7.73431 36.0515 10.642 31.3027 11.2109 24.95C11.7798 18.5972 13.7394 14.4805 14.6481 13.2163C15.8525 11.5407 19.9545 6.49634 25.173 5.80196C27.9297 5.43522 34.7153 5.33636 36.9296 10.7419C37.4507 11.7566 38.6388 13.1771 39.2217 10.7419C39.8045 8.30677 41.1465 3.75719 41.7446 1.7868C41.8872 0.650267 42.699 -1.10802 44.8049 0.951045C45.9827 2.21621 46.5858 2.85586 46.7401 3.01754C47.3749 3.68254 47.7481 4.75898 46.0837 5.80196L41.7446 10.3282C41.6745 10.4642 41.6028 10.5951 41.5335 10.7215C40.8661 11.939 40.4245 12.7446 43.8929 13.8254C49.2551 15.4963 49.6473 18.9449 49.4979 25.5929C49.4922 27.7517 48.5101 32.943 44.6272 36.4376C43.9371 37.0587 43.2631 37.6013 42.6144 38.0741C43.2465 37.1271 43.5855 35.8959 43.5855 34.3764C43.5855 30.2947 40.6459 26.818 36.641 26.818C32.6361 26.818 29.7905 29.4779 29.7905 33.5597C29.7905 37.6415 33.1299 40.4599 37.1348 40.4599C37.6446 40.4599 38.1291 40.4275 38.5865 40.3624C37.4973 40.8019 36.6539 40.9844 36.167 41.0122C32.6149 41.2019 24.0809 41.3374 18.3609 40.3618C12.6409 39.5812 7.97135 38.2166 6.35156 37.6318Z" fill="#409B5E"/></svg>`, name:'移动端 H5 应用', desc:'响应式 SPA，PWA 支持，关注性能与用户体验。', tags:['PWA','React','Mobile'] }
+  { icon:`<svg viewBox="0 0 75 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M73.4776 42.6469C74.3136 43.1559 74.8239 44.0639 74.8239 45.0427L74.8238 91.3169C74.8238 93.4535 72.5304 94.8056 70.6609 93.7711L57.1138 86.2752C57.0003 86.2124 56.8922 86.1424 56.79 86.0659C56.6721 86.15 56.5468 86.2257 56.4148 86.2917L38.2551 95.3748C37.2348 95.8851 36.1174 95.7104 35.3137 95.1075L17.4432 85.8943L4.19306 93.4406C2.32316 94.5055 0 93.1551 0 91.0032L0 44.0708C0 43.0455 0.559409 42.1019 1.45893 41.6099L15.2233 34.0814C15.7573 33.5984 16.4698 33.3238 17.2092 33.3496C17.9055 33.3344 18.5765 33.5852 19.0941 34.0247L36.8163 43.2084C36.9627 43.2843 37.1006 43.3721 37.229 43.4702L55.2861 34.1782C55.8761 33.5561 56.7392 33.2153 57.6166 33.3053C58.4756 33.294 59.2896 33.6875 59.8246 34.3346L73.4776 42.6469Z" fill="#F7F3E1"/><path d="M6.52377 82.0731V48.0332L14.8739 42.4786C17.2846 40.5949 18.8918 41.3573 20.3426 42.2992C24.7996 44.5635 34.0799 49.3192 35.5458 50.2277C37.0117 51.1363 38.7848 50.6063 39.4881 50.2277C43.6624 47.9953 52.6388 43.2341 55.1504 42.0491C56.9845 41.0167 58.6538 41.4091 59.4364 42.0491L68.3122 47.8817C68.3025 58.2423 68.2888 79.5382 68.3122 81.8371C68.3355 84.136 66.3569 83.6355 65.3647 83.0979C63.993 82.2183 60.8645 80.1598 59.3237 78.9635C57.8528 77.6733 55.9286 78.4259 55.1504 78.9635C50.6606 81.3572 41.2617 86.3554 39.5842 87.1988C37.9067 88.0422 36.1662 87.5502 35.5056 87.1988L19.857 78.9518C17.6359 77.4557 16.3856 78.4383 15.5177 78.9518C14.6499 79.4653 12.4948 80.8085 10.8174 82.0731C7.10015 84.4843 6.40613 83.0778 6.52377 82.0731Z" fill="#59C9C0"/></svg>`, name:'cube_core', desc:'Python 数据处理与分区质量工作流项目。', tags:['Python','Data Pipeline','Ray'] },
+  { icon:`<svg viewBox="0 0 80 67" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M23.6992 9.64355C12.1012 9.64355 2.69922 19.0456 2.69922 30.6436V38.4145C2.69922 50.0125 12.1012 59.4145 23.6992 59.4145H34.8603L40.1597 66.2754C40.56 66.7937 41.3422 66.7937 41.7425 66.2754L47.042 59.4145H58.203C69.801 59.4145 79.203 50.0124 79.203 38.4145V30.6436C79.203 19.0456 69.801 9.64355 58.203 9.64355H23.6992Z" fill="#F5F1E6"/><circle cx="20.8502" cy="35.8365" r="5.78961" fill="#5E483B"/><circle cx="40.4293" cy="35.8365" r="5.78961" fill="#5E483B"/><circle cx="60.0084" cy="35.8365" r="5.78961" fill="#5E483B"/></svg>`, name:'ai-wiki', desc:'AI-powered knowledge collection system for Claude Code conversations。', tags:['Python','AI','Knowledge Base'] },
+  { icon:`<svg viewBox="0 0 71 102" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.35156 37.6318C7.73431 36.0515 10.642 31.3027 11.2109 24.95C11.7798 18.5972 13.7394 14.4805 14.6481 13.2163C15.8525 11.5407 19.9545 6.49634 25.173 5.80196C27.9297 5.43522 34.7153 5.33636 36.9296 10.7419C37.4507 11.7566 38.6388 13.1771 39.2217 10.7419C39.8045 8.30677 41.1465 3.75719 41.7446 1.7868C41.8872 0.650267 42.699 -1.10802 44.8049 0.951045C45.9827 2.21621 46.5858 2.85586 46.7401 3.01754C47.3749 3.68254 47.7481 4.75898 46.0837 5.80196L41.7446 10.3282C41.6745 10.4642 41.6028 10.5951 41.5335 10.7215C40.8661 11.939 40.4245 12.7446 43.8929 13.8254C49.2551 15.4963 49.6473 18.9449 49.4979 25.5929C49.4922 27.7517 48.5101 32.943 44.6272 36.4376C43.9371 37.0587 43.2631 37.6013 42.6144 38.0741C43.2465 37.1271 43.5855 35.8959 43.5855 34.3764C43.5855 30.2947 40.6459 26.818 36.641 26.818C32.6361 26.818 29.7905 29.4779 29.7905 33.5597C29.7905 37.6415 33.1299 40.4599 37.1348 40.4599C37.6446 40.4599 38.1291 40.4275 38.5865 40.3624C37.4973 40.8019 36.6539 40.9844 36.167 41.0122C32.6149 41.2019 24.0809 41.3374 18.3609 40.3618C12.6409 39.5812 7.97135 38.2166 6.35156 37.6318Z" fill="#409B5E"/><path fill-rule="evenodd" clip-rule="evenodd" d="M60.0691 40.8215H67.1206C68.7774 40.8215 70.1206 39.4784 70.1206 37.8215V35.5485C70.1206 33.8917 68.7774 32.5485 67.1206 32.5485H56.7823C56.6085 32.5371 56.4354 32.5373 56.264 32.5485H56.0204C54.9415 32.5485 53.9955 33.1182 53.4669 33.9731C53.1679 34.3324 52.9274 34.7512 52.7651 35.2198L49.1837 45.5611H0V58.4033C0 66.1352 6.26801 72.4033 14 72.4033H36.8272C37.9123 72.4033 38.972 72.2953 39.9964 72.0894L38.9452 75.1249L4.09012 75.1246C2.43326 75.1245 1.09009 76.4677 1.09009 78.1246V80.0307C1.09009 81.6876 2.43324 83.0307 4.09009 83.0307H5.73181C4.69681 84.4841 4.09037 86.2483 4.09037 88.1504C4.09037 93.121 8.23174 97.1504 13.3404 97.1504C18.449 97.1504 22.5904 93.121 22.5904 88.1504C22.5904 86.2483 21.9839 84.4841 20.9489 83.0307H27.7318C26.6968 84.4841 26.0904 86.2483 26.0904 88.1504C26.0904 93.121 30.2317 97.1504 35.3404 97.1504C40.449 97.1504 44.5904 93.121 44.5904 88.1504C44.5904 86.2857 44.0075 84.5535 43.0095 83.1168C44.4915 82.9562 45.8202 81.9654 46.3415 80.46L60.0691 40.8215Z" fill="#4A3D37"/></svg>`, name:'minicode-go', desc:'AI coding assistant with animated TUI, multi-provider support, and goal-driven agent loop。', tags:['Go','TUI','Agent'] },
+  { icon:`<svg viewBox="0 0 91 82" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.18652" y="1.29688" width="57.27" height="74.7502" rx="8" fill="#F7F3E1"/><path fill-rule="evenodd" clip-rule="evenodd" d="M42.6888 35.5469C30.6862 30.2339 19.8407 34.0493 15.9183 36.6212C13.8852 52.7036 18.98 56.7398 27.1072 60.3539C27.6614 60.5307 28.9816 61.3837 29.8281 63.3814C29.7361 61.4936 31.0417 60.5765 31.7061 60.3539C42.6889 56.3496 46.6113 48.1457 42.6888 35.5469Z" fill="#4C3C33"/></svg>`, name:'markdown-tech-pdf-skill', desc:'Codex skill for exporting Markdown technical documents to PDF。', tags:['Python','Codex','PDF'] },
+  { icon:`<svg viewBox="0 0 85 66" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M30.585 0H54.7227C56.8954 0.0509226 61.251 1.72121 61.2917 7.99496C61.2917 10.9719 62.9303 12.1182 64.1666 12.4312H70.5935C78.4581 12.4312 84.8336 18.8067 84.8336 26.6712V51.0976C84.8336 58.9622 78.4581 65.3377 70.5935 65.3377H14.2401C6.37551 65.3377 0 58.9622 0 51.0976V26.6712C0 18.8067 6.37549 12.4312 14.2401 12.4312H21.3539C22.5467 12.1169 24.1915 11.0856 24.1915 8.63043C24.1915 4.37225 26.5803 0 30.585 0Z" fill="#4C3C33"/><ellipse cx="42.9035" cy="39.4683" rx="19.7658" ry="19.7652" fill="#F9F6E5"/><path fill-rule="evenodd" clip-rule="evenodd" d="M57.5033 39.468C57.5033 47.5323 50.9659 54.0697 42.9016 54.0697C34.8372 54.0697 28.2998 47.5323 28.2998 39.468C28.2998 31.4036 34.8372 24.8662 42.9016 24.8662C50.9659 24.8662 57.5033 31.4036 57.5033 39.468Z" fill="#9364DE"/></svg>`, name:'ai-job', desc:'智能求职助手，基于 AI 的简历处理和 Boss 直聘自动投递工具。', tags:['Java','AI','Automation'] },
+  { icon:`<svg viewBox="0 0 71 102" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.35156 37.6318C7.73431 36.0515 10.642 31.3027 11.2109 24.95C11.7798 18.5972 13.7394 14.4805 14.6481 13.2163C15.8525 11.5407 19.9545 6.49634 25.173 5.80196C27.9297 5.43522 34.7153 5.33636 36.9296 10.7419C37.4507 11.7566 38.6388 13.1771 39.2217 10.7419C39.8045 8.30677 41.1465 3.75719 41.7446 1.7868C41.8872 0.650267 42.699 -1.10802 44.8049 0.951045C45.9827 2.21621 46.5858 2.85586 46.7401 3.01754C47.3749 3.68254 47.7481 4.75898 46.0837 5.80196L41.7446 10.3282C41.6745 10.4642 41.6028 10.5951 41.5335 10.7215C40.8661 11.939 40.4245 12.7446 43.8929 13.8254C49.2551 15.4963 49.6473 18.9449 49.4979 25.5929C49.4922 27.7517 48.5101 32.943 44.6272 36.4376C43.9371 37.0587 43.2631 37.6013 42.6144 38.0741C43.2465 37.1271 43.5855 35.8959 43.5855 34.3764C43.5855 30.2947 40.6459 26.818 36.641 26.818C32.6361 26.818 29.7905 29.4779 29.7905 33.5597C29.7905 37.6415 33.1299 40.4599 37.1348 40.4599C37.6446 40.4599 38.1291 40.4275 38.5865 40.3624C37.4973 40.8019 36.6539 40.9844 36.167 41.0122C32.6149 41.2019 24.0809 41.3374 18.3609 40.3618C12.6409 39.5812 7.97135 38.2166 6.35156 37.6318Z" fill="#409B5E"/></svg>`, name:'slice_note', desc:'TypeScript 知识笔记应用，关注关系视图、虚拟列表和交互体验。', tags:['TypeScript','Notes','Relations'] }
 ];
 
-document.getElementById('projectsGrid').innerHTML = projects.map(p =>
-  `<div class="project-item">
-    <div class="project-icon">${p.icon}</div>
+const projectIcons = projects.map(p => p.icon);
+const realProjects = [
+  {
+    name: 'cube_core',
+    desc: 'Python 数据处理与分区质量工作流项目，近期持续补充分区产品适配器、Ray 到 ingest 的端到端流程和项目文档。',
+    tags: ['Python', 'Data Pipeline', 'Partition', 'Ray'],
+    url: 'https://github.com/zarttic/cube_core',
+  },
+  {
+    name: 'ai-wiki',
+    desc: '面向 Claude Code 对话的 AI 知识收集系统，把开发过程中的上下文沉淀成可检索的个人知识库。',
+    tags: ['Python', 'AI', 'Knowledge Base'],
+    url: 'https://github.com/zarttic/ai-wiki',
+  },
+  {
+    name: 'minicode-go',
+    desc: 'Go 编写的 AI coding assistant，带动画 TUI、多模型 provider 支持和 goal-driven agent loop。',
+    tags: ['Go', 'TUI', 'Agent', 'LLM'],
+    url: 'https://github.com/zarttic/minicode-go',
+  },
+  {
+    name: 'markdown-tech-pdf-skill',
+    desc: 'Codex skill，用于把 Markdown 技术文档导出为 PDF，围绕 agent skills、Codex 和文档生成场景构建。',
+    tags: ['Python', 'Codex', 'PDF', 'Markdown'],
+    url: 'https://github.com/zarttic/markdown-tech-pdf-skill',
+  },
+  {
+    name: 'ai-job',
+    desc: '智能求职助手，基于 AI 做简历处理和 Boss 直聘自动投递，覆盖简历、投递和求职流程自动化。',
+    tags: ['Java', 'AI', 'Automation'],
+    url: 'https://github.com/zarttic/ai-job',
+  },
+  {
+    name: 'bd_wiki',
+    desc: '大数据学习与面试知识库，整理 SQL 优化、Spark 调优、数据仓库建模和数据质量等主题。',
+    tags: ['Big Data', 'SQL', 'Spark', 'Wiki'],
+    url: 'https://github.com/zarttic/bd_wiki',
+  },
+  {
+    name: 'slice_note',
+    desc: 'TypeScript 知识笔记应用，包含知识列表虚拟化、关系视图、快速创建草稿和乐观更新等体验细节。',
+    tags: ['TypeScript', 'Notes', 'Relations'],
+    url: 'https://github.com/zarttic/slice_note',
+  },
+  {
+    name: 'bitcask',
+    desc: 'Go 实现的 Bitcask-like 高性能 KV 数据库，围绕存储引擎、索引和数据库基础能力练习。',
+    tags: ['Go', 'KV Store', 'Database'],
+    url: 'https://github.com/zarttic/bitcask',
+  },
+];
+
+document.getElementById('projectsGrid').innerHTML = realProjects.map((p, i) =>
+  `<a href="${p.url}" target="_blank" rel="noopener" class="project-item">
+    <div class="project-icon">${projectIcons[i % projectIcons.length]}</div>
     <div class="project-name">${p.name}</div>
     <div class="project-desc">${p.desc}</div>
     <div class="project-tags">${p.tags.map(t=>`<span class="project-tag">${t}</span>`).join('')}</div>
-  </div>`
+  </a>`
 ).join('');
 
 // ===== PR Data =====
-// ===== PRs Data =====
-const prs = [
-  { repo:'esengine/DeepSeek-Reasonix', repoUrl:'https://github.com/esengine/DeepSeek-Reasonix', title:'fix(desktop): sticky-to-bottom auto-scroll', desc:'为桌面端聊天区域添加粘性底部自动滚动，支持 ResizeObserver 检测流式内容增长 + 用户滚动位置感知 + 跳转到底部按钮。', merged:true, url:'https://github.com/esengine/DeepSeek-Reasonix/pull/965' },
-  { repo:'zarttic/cube_core', repoUrl:'https://github.com/zarttic/cube_core', title:'feat: add partition product adapters', desc:'新增分区产品适配器层，支持多租户数据隔离的产品数据接入。', merged:true, url:'https://github.com/zarttic/cube_core/pull/9' },
-  { repo:'datanote1018/datanote', repoUrl:'https://github.com/datanote1018/datanote', title:'feat: NL2SQL Agent 编排与修复回路', desc:'实现 NL2SQL Agent 编排：Schema 上下文、SQL 安全守卫、Hive dry-run、失败自动修复回路（最多 2 轮）。', merged:false, url:'https://github.com/datanote1018/datanote/pull/1' },
-  { repo:'aaif-goose/goose', repoUrl:'https://github.com/aaif-goose/goose', title:'fix: declarative provider context_limit', desc:'将自定义 provider 的 known_models context_limit 应用逻辑重构到标准化的模型创建路径中。', merged:true, url:'https://github.com/aaif-goose/goose/pull/8364' },
-  { repo:'zarttic/cube_core', repoUrl:'https://github.com/zarttic/cube_core', title:'feat: add ray-to-ingest e2e runthrough', desc:'添加 Ray 输出数据摄取模块（SQLite 存储）+ E2E 运行脚本，101 项测试通过。', merged:true, url:'https://github.com/zarttic/cube_core/pull/7' },
+const openSourcePrs = [
+  {
+    repo: 'esengine/DeepSeek-Reasonix',
+    title: 'fix(desktop): add sticky-to-bottom auto-scroll for chat area',
+    desc: '为桌面端聊天区新增基于 ResizeObserver 的粘性底部自动滚动，处理流式内容增长、用户滚动意图和跳到底部按钮。',
+    merged: true,
+    url: 'https://github.com/esengine/DeepSeek-Reasonix/pull/965',
+  },
+  {
+    repo: 'aaif-goose/goose',
+    title: 'fix: apply declarative provider context_limit via canonical create path',
+    desc: '把自定义 provider 的 known_models context_limit 应用到标准模型创建路径，并补充 Rust 单元测试与 provider 初始化测试。',
+    merged: true,
+    url: 'https://github.com/aaif-goose/goose/pull/8364',
+  },
+  {
+    repo: 'datanote1018/datanote',
+    title: 'feat: 新增 NL2SQL Agent 编排与修复回路',
+    desc: '新增 NL2SQL Agent 编排，包含 Schema 上下文、SQL 安全守卫、Hive dry-run 和最多 2 轮失败修复回路。',
+    merged: false,
+    url: 'https://github.com/datanote1018/datanote/pull/1',
+  },
+  {
+    repo: 'OI-wiki/OI-wiki',
+    title: 'feat(tools/editor/cpeditor): add cpeditor',
+    desc: '向 OI Wiki 工具文档补充 cpeditor 相关内容，PR 已合并。',
+    merged: true,
+    url: 'https://github.com/OI-wiki/OI-wiki/pull/4483',
+  },
+  {
+    repo: 'acmerindex/acmer-info',
+    title: '维护 ACM 群组信息',
+    desc: '多次向 acmer-info 提交群组信息更新，包括新增和修改 OW 群相关数据。',
+    merged: true,
+    url: 'https://github.com/acmerindex/acmer-info/pull/171',
+  },
+  {
+    repo: 'MusaAkyuz/Computer-Science-Resources',
+    title: 'add concurrency-in-go',
+    desc: '向 Computer-Science-Resources 补充 Concurrency in Go 相关学习资源。',
+    merged: true,
+    url: 'https://github.com/MusaAkyuz/Computer-Science-Resources/pull/1',
+  },
 ];
 
-document.getElementById('prsGrid').innerHTML = prs.map(p =>
+document.getElementById('prsGrid').innerHTML = openSourcePrs.map(p =>
   `<a href="${p.url}" target="_blank" rel="noopener" class="pr-item">
     <div class="pr-status ${p.merged?'merged':'open'}">${p.merged?'✓':'○'}</div>
     <div class="pr-body">
